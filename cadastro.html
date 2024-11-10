@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="formulario.css" media="screen">
     <title>Formulário de Cadastro</title>
     <style>
         body {
@@ -91,13 +92,11 @@
 
             alert(`Cadastro realizado!\nNome: ${nome}\nIdade: ${idade}\nE-mail: ${email}\nDeseja receber novidades: ${novidades}`);
             
-            // Limpar o formulário após envio
             document.getElementById('cadastroForm').reset();
 
-            // Redireciona após o alerta ser fechado (com 1 segundo de delay)
             setTimeout(function() {
-                window.location.href = "index.html";  // Altere para o destino desejado
-            }, 1000); // O redirecionamento ocorrerá após 1 segundo (1000 ms)
+                window.location.href = "index.html";  
+            }, 1000); 
         });
     </script>
 

@@ -3,41 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contato - MindMaze</title>
+    <title>Contato</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f8ff;
+            background-color: #f0f8f0;
             color: #333;
             margin: 0;
             padding: 0;
         }
+
         header {
-            background-color: #4caf50;
+            background-color: #9BAE7D; /* Cor do cabeçalho */
             color: white;
-            padding: 1rem;
             text-align: center;
+            padding: 20px;
         }
-        nav ul {
-            list-style: none;
-            padding: 0;
+
+        header h1 {
             margin: 0;
         }
-        nav ul li {
-            display: inline;
-            margin: 0 1rem;
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-        nav ul li a {
+
+        .container h2 {
+            color: #9BAE7D; /* Cor para o título */
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-size: 16px;
+            margin: 10px 0 5px;
+            color: #9BAE7D; /* Cor para os labels */
+        }
+
+        input, textarea {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            background-color: #9BAE7D; /* Cor do botão */
             color: white;
-            text-decoration: none;
-            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            padding: 15px;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
         }
-        nav ul li a:hover {
-            text-decoration: underline;
+
+        input[type="submit"]:hover {
+            background-color: #9BAE7D; /* Mantém a mesma cor ao passar o mouse */
         }
-        .content {
-            background-color: white;
-            padding: 2rem;
-            margin: 1rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #9BAE7D; /* Cor do rodapé */
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Entre em Contato</h1>
+    </header>
+
+    <div class="container">
+        <h2>Preencha o formulário abaixo:</h2>
+
+        <form action="mailto:seu-email@dominio.com" method="post" enctype="text/plain">
+            <label for="nome">Seu Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="telefone">Seu Telefone:</label>
+            <input type="tel" id="telefone" name="telefone" placeholder="(XX) XXXX-XXXX" required>
+
+            <label for="mensagem">Sua Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+
+            <input type="submit" value="Enviar Mensagem">
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Sua Empresa - Todos os direitos reservados</p>
+    </footer>
+
+</body>
+</html>

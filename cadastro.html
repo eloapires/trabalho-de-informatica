@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Cadastro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .form-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 14px;
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        input[type="text"], input[type="email"], input[type="number"], input[type="submit"], select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Cadastro e Pesquisa de Usuário</h2>
+        <form id="cadastroForm" action="javascript:void(0);">
+            <label for="nome">Seu nome:</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="idade">Sua idade:</label>
+            <input type="number" id="idade" name="idade" required min="1">
+
+            <label for="email">Seu e-mail:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="novidades">Deseja receber novidades?</label>
+            <select id="novidades" name="novidades">
+                <option value="sim">Sim</option>
+                <option value="nao">Não</option>
+            </select>
+
+            <input type="submit" value="Cadastrar">
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('cadastroForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const nome = document.getElementById('nome').value;
+            const idade = document.getElementById('idade').value;
+            const email = document.getElementById('email').value;
+            const novidades = document.getElementById('novidades').value;
+
+            alert(`Cadastro realizado!\nNome: ${nome}\nIdade: ${idade}\nE-mail: ${email}\nDeseja receber novidades: ${novidades}`);
+            
+            // Limpar o formulário após envio
+            document.getElementById('cadastroForm').reset();
+
+            // Redireciona após o alerta ser fechado (com 1 segundo de delay)
+            setTimeout(function() {
+                window.location.href = "index.html";  // Altere para o destino desejado
+            }, 1000); // O redirecionamento ocorrerá após 1 segundo (1000 ms)
+        });
+    </script>
+
+</body>
+</html>
